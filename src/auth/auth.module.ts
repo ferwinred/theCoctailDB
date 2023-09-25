@@ -8,10 +8,23 @@ import { RoleModule } from './role/role.module';
 import { UserService } from './user/user.service';
 import { Role } from './role/entities/role.entity';
 import { RoleService } from './role/role.service';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [
         TypeOrmModule.forFeature([User, Role]), 
+        JwtModule.registerAsync({
+            imports: [ConfigModule],
+            useFactory: async (configService: ConfigService) => ({
+              secret: configService.get<string>('JWT_SECRET'),
+              global: true,
+              signOptions: {
+                expiresIn: '1d',
+              }
+            }),
+            inject: [ConfigService],
+          }),
         UserModule, 
         RoleModule
     ],

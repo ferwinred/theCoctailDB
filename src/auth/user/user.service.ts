@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { Repository } from 'typeorm';
 
 import { CreateUserDto, UpdateUserDto } from './dto';
@@ -105,5 +105,21 @@ export class UserService {
     }
 
     return user;
+  }
+
+  async findByEmailWithPassword(email: string) {
+    try {
+      
+      const user = await this.userRepository.findOne({
+        where: {
+          email: email,
+        }, 
+        select: [ 'password', 'id', 'full_name', 'email', 'role']
+      });
+  
+      return user;
+    } catch (error) {
+      throw new BadRequestException(error);
+    }
   }
 }
