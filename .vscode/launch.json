@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "app",
+            "type": "node",
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register",
+                "-r",
+                "tsconfig-paths/register"
+            ],
+            "request": "launch",
+            "args": [
+                "${workspaceFolder}/apps/app/src/main.ts"
+            ],
+            "autoAttachChildProcesses": true
+        },
+        {
+            "name": "authorization",
+            "type": "node",
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register",
+                "-r",
+                "tsconfig-paths/register"
+            ],
+            "request": "launch",
+            "args": [
+                "${workspaceFolder}/apps/authorization/src/main.ts"
+            ],
+            "autoAttachChildProcesses": true
+        }
+    ]
+}
