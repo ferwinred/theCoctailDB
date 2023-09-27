@@ -1,22 +1,45 @@
-import { BaseEntity } from 'src/common/baseEntity';
-import { Entity, Column } from 'typeorm';
+import { Role } from '../../../auth/role/entities/role.entity';
+import { BaseEntity } from '../../../common/baseEntity';
+import { Entity, Column, ManyToOne, JoinColumn } from 'typeorm';
 
+/**
+ * @class Entity
+ * @extends BaseEntity
+ */
 @Entity()
 export class User extends BaseEntity {
 
-  @Column()
+  /** @member {string}  full_name - The User fullname */
+  @Column({
+    nullable: false
+  })
   full_name: string;
 
-  @Column()
+  /** @member {string}  email - The unique associated email of the user */
+  @Column({
+    nullable: false,
+    unique: true,
+  })
   email: string;
 
-  @Column()
+  /** @member {string}  password - The encrypted user's password */
+  @Column({
+    nullable: false,
+  })
   password: string;
 
+  /** @member {string}  phone - The user's phone number with country code */
   @Column()
   phone: string;
 
-  @Column()
-  role: string;
+  /** @member {string}  role - The user's role */
+  // @Column()
+  // role: string;
+  @ManyToOne(() => Role)
+   @JoinColumn({
+       name: 'role',
+       referencedColumnName: 'name'
+   })
+   role: string;
 
 }

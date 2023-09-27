@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "d1004ea1-913f-495e-97f0-135f98e3a54f",
+		"name": "Cocktail_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "18075829"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZlcndpbkBiYXIuY29tIiwiaWF0IjoxNjk1NzcxMTk0LCJleHAiOjE2OTU4NTc1OTR9.RwzD-_EtpEWVS6odJdDbjgDFull8iIJyCfOthNv3guc"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{HOST}}/{{PATH}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "userById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZlcndpbkBiYXIuY29tIiwiaWF0IjoxNjk1NzcxMTk0LCJleHAiOjE2OTU4NTc1OTR9.RwzD-_EtpEWVS6odJdDbjgDFull8iIJyCfOthNv3guc"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{HOST}}/{{PATH}}/users/aa23b34c-4d89-4bc3-8ad3-e57c40311c23"
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Dani Perez\",\r\n    \"email\": \"dani@dani.com\",\r\n    \"password\": \"dani123\",\r\n    \"phone\": \"+573333333333\",\r\n    \"role\": \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{HOST}}/{{PATH}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Dani Perez\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{HOST}}/users/10"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZlcndpbkBiYXIuY29tIiwiaWF0IjoxNjk1NzcxMTk0LCJleHAiOjE2OTU4NTc1OTR9.RwzD-_EtpEWVS6odJdDbjgDFull8iIJyCfOthNv3guc"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{HOST}}/{{PATH}}/users/aa23b34c-4d89-4bc3-8ad3-e57c40311c23"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "Roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{HOST}}/{{PATH}}/roles"
+					},
+					"response": []
+				},
+				{
+					"name": "RolesById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{HOST}}/{{PATH}}/roles/b757726e-92cb-493a-b771-08a88d76f5a"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{HOST}}/{{PATH}}/roles"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Role",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{HOST}}/{{PATH}}/roles/0bd65c28-7857-4a7d-8ab9-5229bb9ddf6f"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZlcndpbkBiYXIuY29tIiwiaWF0IjoxNjk1NzcxMTk0LCJleHAiOjE2OTU4NTc1OTR9.RwzD-_EtpEWVS6odJdDbjgDFull8iIJyCfOthNv3guc"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{HOST}}/{{PATH}}/roles/aa23b34c-4d89-4bc3-8ad3-e57c40311c23"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ferwin@bar.com\",\r\n    \"password\": \"secret123+\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{HOST}}/{{PATH}}/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "U2FsdGVkX18JUqOJRW6MhihyxmazNaJQWwAiUMWmHD8tldE+itjhXfbzBPG6poJ8onx7rVkictf/5zXsRPp3zupB1jUhi2AdbDgU+DM5rKDVD2/iMbxNdxCQW9Xj413Iy9RGS2uq7dSie03u2XMlaC5xdiq+N1MnBiPUr1G90oPXzJtVJPOYMH/22V0r81I+KrY1Gerz8bsQnppLy14qyPskCGzr4Bixq9a/PEKvAcsroGgrLtCElp1PzR27Eofhz0mosgW2rL70gbma8srVaYWJgUNH0UT9tN5nCoztULshE9JPJ0UQGGOcs1sxEv921zIoWWued+Z0Vb7FNzKVxUfxpVLhd16MuAPKqjfy/x9sqzlcA5BeCiHyciFz0ZY/R+ZpkGA5CiMHxP2fsGU1yo8/cofABRvfAah/ch4ZRaaIPWw1BrPjcyBJgW918rX3Dx/uds4hMY63yEgHEiz/eaL68/F0wMMF5oByxA72Y90yxn39bnncxEXCOp7ViKR4jMsICUQDz+tmiAGt04J2yI53lfPXhaobfJTAE6DEYQ1WhXtYGIxqTsZEOlL0AITDskKi8+HHcI1VrQ70xkq2RQ=="
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"full_name\": \"Ferwin Arias\",\r\n    \"email\": \"ferwin@bar.com\",\r\n    \"password\": \"secret123+\",\r\n    \"phone\": \"+573003333333\",\r\n    \"role\": \"bartender\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{HOST}}/{{PATH}}/auth/register"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

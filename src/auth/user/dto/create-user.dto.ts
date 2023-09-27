@@ -1,9 +1,9 @@
-import { IsAlpha, IsEmail, IsEnum, IsPhoneNumber, IsString, MaxLength, MinLength } from "class-validator";
-import { Roles } from "src/common/interfaces/enums";
+import { IsEmail, IsEnum, IsPhoneNumber, IsString, MaxLength, MinLength } from "class-validator";
+import { ERole } from "../../../common/interfaces/enums";
 
 export class CreateUserDto {
 
-    @IsAlpha()
+    @IsString()
     @MaxLength(30)
     @MinLength(3)
     full_name: string;
@@ -21,6 +21,6 @@ export class CreateUserDto {
     @MaxLength(15)
     phone: string;
 
-    @IsEnum(Roles)
+    @IsEnum(ERole)
     role: string;
 }

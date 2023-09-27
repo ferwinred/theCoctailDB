@@ -24,15 +24,62 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This repository used "[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository" to implement an API following the requirements of the "Prueba Técnica Desarrollador Backend - INLAZE".
 
 ## Installation
+
+If you use `npm` please delete the `yarn.lock` file and run the following command
 
 ```bash
 $ npm install
 ```
 
+If you use `yarn` run the following command
+
+```bash
+$ yarn install
+```
+## Environments Variables
+
+You need to set the environment variables in the `env` file, please follow the example file `env-example`
+
+```env
+## APP SETTINGS
+PORT=
+NODE_ENV=
+
+## DATABASE CREDENTIALS
+DB_HOST=
+DB_PORT=
+DB_NAME=
+DB_USER=
+DB_PASS=
+
+## AUTHENTICATION
+JWT_SECRET=
+```
+## Setting the Database
+
+1. Generate the database using docker (You need to have docker installed)
+```bash
+$ docker-compose up -d
+```
+
+2. Seed the initial information needed
+- If you use `npm`
+```bash
+$ npm run seed
+```
+- If you use `yarn`
+```bash
+$ yarn seed
+```
+
+After complete those steps you can get info of some Users fake created with the Admin and SuperAdmin roles, You can see the `password` and `email` in the `console`.
+
 ## Running the app
+
+After setting the database you can run the APP with any of the following commands
 
 ```bash
 # development
@@ -47,6 +94,8 @@ $ npm run start:prod
 
 ## Test
 
+The test environment is not functional
+
 ```bash
 # unit tests
 $ npm run test
@@ -58,16 +107,14 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## DOCS
+You can see a documentation in the link `${APP_URL}/docs`
 ## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+If you have any doubts or an error is generated, please do not hesitate to request support <a href="mailto:ferwin.arias@gmail.com">here</a>.
+
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- [Github](https://github.com/ferwinred)
+- [Linkedin](https://www.linkedin.com/in/ferwinarias)

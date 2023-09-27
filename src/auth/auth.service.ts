@@ -17,7 +17,22 @@ constructor(
         private readonly jwtService: JwtService,
     ){}
 
-  async register({ full_name, email, password, role, phone }: RegisterDto) {
+/**
+* 
+* @description Register a new User in the APP
+* 
+* @param {RegisterDto} registerDto this object has the following properties:
+* 
+* - full_name: Complete name of the user to register
+* - email: The unique email associated to the user to register
+* - password: The password that the user to register will be use to authenticate in the APP
+* - phone: The phone number of the user to register
+* - role: The role of the user to register, the default value is client
+* 
+* @returns Promise<User{}>
+* 
+*/
+async register({ full_name, email, password, role, phone }: RegisterDto) {
     try {
         const user = await this.userService.findByEmailWithPassword(email);
 
@@ -41,7 +56,16 @@ constructor(
 
   }
 
-  async login (loginDto: LoginDto) {
+  /**
+* 
+* @description Register a new User in the APP
+* 
+* @param {LoginDto} loginDto This object contains the login information to authenticate a user in the APP
+* 
+* @returns Promise<{ token: string, user: string, role: string }>
+* 
+*/
+async login (loginDto: LoginDto) {
     const user = await this.userService.findByEmailWithPassword(loginDto.email);
 
         if (!user) throw new UnauthorizedException(`Wrong email or password`);
@@ -65,7 +89,7 @@ constructor(
                 role: user.role
             };
         } catch (error) {
-            throw new UnauthorizedException(`Invalid Token`)
+            throw new UnauthorizedException(`Invalid Token`);
         }
   }
 
